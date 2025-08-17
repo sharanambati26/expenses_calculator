@@ -211,11 +211,11 @@ export default function ExpnesesSplitter() {
         typeof str === 'string' ? str.replace(/\b\w/g, (c) => c.toUpperCase()) : '';
 
     return (
-        <Box sx={{ p: 3, height: '100vh', backgroundColor: '#f5f7fa', boxSizing: 'border-box' }}>
+        <Box sx={{ p: 3, minHeight: '100vh', backgroundColor: '#f5f7fa', boxSizing: 'border-box' }}>
             {!showFinalPayments && !showHistory && (
                 <Grid
                     container
-                    spacing={2}
+                    spacing={3}
                     sx={{ height: "100%", flex: "column" }}
                     wrap={isMobile ? "wrap" : "nowrap"}
                 >
@@ -234,6 +234,7 @@ export default function ExpnesesSplitter() {
                         <Paper
                             sx={{
                                 p: 3,
+                                pb: 5,
                                 display: "flex",
                                 flexDirection: "column",
                                 overflowY: "auto",
@@ -613,7 +614,7 @@ export default function ExpnesesSplitter() {
             )}
 
             {showFinalPayments && (
-                <Paper sx={{ p: 3, height: "90vh", overflowY: "auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <Paper sx={{ p: 3, pb: 5, overflowY: "auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <Typography variant="h5" gutterBottom sx={{ mb: 2, fontWeight: 600 }}>
                         Settlement Summary
                     </Typography>
@@ -917,7 +918,7 @@ export default function ExpnesesSplitter() {
                     >
                         Back to Adding & Expenses
                     </Button>
-                    <Paper sx={{ p: 2, height: "100%", overflowY: "auto", boxSizing: "border-box", width: isMobile ? "100%" : "70%", }}>
+                    <Paper sx={{ p: 2, pb: 5, height: "100%", overflowY: "auto", boxSizing: "border-box", width: isMobile ? "100%" : "70%", }}>
                         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
                             <Typography variant="h6">
                                 History

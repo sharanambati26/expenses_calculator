@@ -1,0 +1,13 @@
+// Icon suggestions for select/deselect all action
+// 1. GroupAddIcon: for selecting all people
+// 2. GroupRemoveIcon: for deselecting all people
+// 3. PeopleAltIcon: for group actions
+// 4. SelectAllIcon: for select all (if available)
+// 5. CheckCircleIcon: for all selected
+// 6. RadioButtonUncheckedIcon: for none selected
+// 7. RadioButtonCheckedIcon: for all selected
+// 8. PlaylistAddCheckIcon: for confirming selection
+// 9. SupervisorAccountIcon: for group management
+// 10. MultipleStopIcon: for toggling selection
+
+// Most suitable: GroupAddIcon (select all), GroupRemoveIcon (deselect all), PeopleAltIcon (group), PlaylistAddCheckIcon (confirm all)

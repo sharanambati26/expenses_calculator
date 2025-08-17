@@ -69,6 +69,13 @@ export default function ExpnesesSplitter() {
     const [showFinalPayments, setShowFinalPayments] = useState(false);
     const [settlementView, setSettlementView] = useState('list'); // 'card' or 'list'
     const [showHistory, setShowHistory] = useState(false);
+
+    // Scroll to top when settlement summary or history is opened
+    useEffect(() => {
+        if (showFinalPayments || showHistory) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [showFinalPayments, showHistory]);
     const [clearDialogOpen, setClearDialogOpen] = useState(false);
     const [deletedHistory, setDeletedHistory] = useState(() => {
         const saved = localStorage.getItem("expenses_splitter_deleted_history");

@@ -1,3 +1,4 @@
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import React, { useState, useMemo, useEffect } from "react";
 import {
     Grid,
@@ -46,7 +47,7 @@ export default function ExpnesesSplitter() {
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const [people, setPeople] = useState(() => {
         const saved = localStorage.getItem("expenses_splitter_people");
-        return saved ? JSON.parse(saved) : ["sharan", "surya", "vishnu", "raqib"];
+        return saved ? JSON.parse(saved) : ["cherry", "chitti"];
     });
     const [newPerson, setNewPerson] = useState("");
     const [amount, setAmount] = useState("");
@@ -261,8 +262,9 @@ export default function ExpnesesSplitter() {
                                 title="Describe the expense item"
                             />
 
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                <Typography variant="subtitle1" sx={{ mr: 2 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "space-between",  mb: 1 }}>
+                                <Box sx={{display: 'flex', alignItems: 'center'}}>
+                                    <Typography variant="subtitle1" sx={{ mr: 2 }}>
                                     Select People to Expense
                                 </Typography>
                                 <Tooltip title={selectedPeople.length === people.length ? 'Deselect All' : 'Select All'}>
@@ -281,6 +283,16 @@ export default function ExpnesesSplitter() {
                                         ) : (
                                             <GroupAddIcon />
                                         )}
+                                    </IconButton>
+                                </Tooltip>
+                                </Box>
+                                <Tooltip title="Modify People">
+                                    <IconButton
+                                        color="primary"
+                                        onClick={() => setShowPeopleManager(true)}
+                                        sx={{ ml: 2 }}
+                                    >
+                                        <ManageAccountsIcon />
                                     </IconButton>
                                 </Tooltip>
                             </Box>
@@ -366,17 +378,6 @@ export default function ExpnesesSplitter() {
                                 {editingIdx !== null ? "Update Expense" : "Add Expense"}
                             </Button>
 
-                            <Box sx={{ display: "flex", mb: 3, mt: "auto" }}>
-                                <Button
-                                    variant="outlined"
-                                    color="primary"
-                                    fullWidth
-                                    onClick={() => setShowPeopleManager(true)}
-                                    title="Modify the people list (add or remove people)"
-                                >
-                                    Modify People
-                                </Button>
-                            </Box>
                             {/* People Manager Section (Dialog) */}
                             <Dialog open={showPeopleManager} onClose={() => setShowPeopleManager(false)}>
                                 <DialogTitle>Modify People</DialogTitle>
